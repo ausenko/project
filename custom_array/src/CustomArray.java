@@ -6,6 +6,7 @@ public class CustomArray {
     public static void main(String[] args) {
 
 
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Ведите значение для того чтобы задать длину массива: ");
         int n = sc.nextInt();
@@ -20,17 +21,29 @@ public class CustomArray {
         print(array);
 
         System.out.println("Для цикличеуского сдвига в массиве введите значение,k: ");
+
         int k = sc.nextInt();
         while (k >= n) {
             System.out.println("Некорректное значение,  введите повторно значение к: ");
             k = sc.nextInt();
+        }
+        System.out.println("Выберите тип сдвига,для сдвига влево введите 1, вправо 2");
+        int typeshift = sc.nextInt();
+
+        switch(typeshift){
+            case 1:
+                System.out.println("Циклический сдвиг влево:");
+                print(shiftLeft(array,k));
+                break;
+            case 2:
+                System.out.println("Циклический сдвиг вправо:");
+                print(shiftRight(array,k));
+                break;
+            default:
+                System.out.println("Сдвиг не осуществленн");
 
         }
 
-        System.out.println("Циклический сдвиг влево: ");
-        print(shiftLeft(array,k));
-        System.out.println("Циклический сдвиг вправо: ");
-        print(shiftRight(array,k));
         System.out.println("Массив обратного порядка: ");
         print(reverse(array));
         System.out.println("Массив после удаления элемента по индексу: ");
@@ -46,16 +59,17 @@ public class CustomArray {
     }
 
     private static int[] shiftLeft(int[] array, int value) {
-        int size = array.length;
-        for(int i = size; i > value; i-- ){
-            int temp = array[size-1];
-            for(int j = size-1; j>0; j--){
-                array[j] = array[j-1];
+        int size = array.length-1;
+        for(int i = 0; i < value; i++){
+            int temp = array[0];
+            for(int j = 0; j<size; j++){
+                array[j] = array[j+1];
             }
-            array[0] = temp;
+            array[size] = temp;
         }
         return array;
     }
+
     private static int[] shiftRight(int[] array, int value){
         int size = array.length;
         for(int i = 0; i<value; i++){

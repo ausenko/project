@@ -27,6 +27,7 @@ public class ArrayUtilsTest {
     public void testToString() {
         assertNull(ArrayUtils.toString(null));
         assertEquals("[1, 2, 3]", ArrayUtils.toString(new int[]{1, 2, 3}));
+        assertNotEquals("[-1,0,2]",ArrayUtils.toString(new int[]{2,2,2,2,2,2,2}));
         assertEquals("[0, -1]", ArrayUtils.toString(new int[]{0, -1}));
     }
 }

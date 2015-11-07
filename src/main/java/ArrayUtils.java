@@ -27,6 +27,7 @@ public final class ArrayUtils {
         return array;
     }
 
+
     /**
      * Checks whether passed array is ordered.
      *
@@ -57,5 +58,61 @@ public final class ArrayUtils {
             sb.append(", ").append(value);
         }
         return "[" + sb.toString().substring(1).trim() + "]";
+    }
+
+    public static void print(final int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            System.out.println("[" + i + "]" + " = " + array[i]);
+        }
+    }
+
+
+    public static int[] merge(int[] array1, int m, int[] array2, int n) {
+
+        if (array2 == null || n == 0) return array1;
+        if (n < 0 || m < 0) throw new IllegalArgumentException("Invalid size argument array");
+        if (m > array1.length || n > array2.length) throw new ArrayIndexOutOfBoundsException();
+
+
+        for (int i = 0; i < n; i++) {
+            array1[m + i] = array2[i];
+        }
+        return array1;
+    }
+
+
+    public static int[] sortArray(int[] array1) {
+        if (array1 == null) {
+            throw new NullPointerException("Array is null");
+        }
+
+        int tempVar = 0;
+        for (int i = 0; i < array1.length; i++) {
+
+            for (int j = i + 1; j < array1.length; j++) {
+                if (array1[j] < array1[i]) {
+                    tempVar = array1[i];
+                    array1[i] = array1[j];
+                    array1[j] = tempVar;
+                }
+            }
+        }
+        return array1;
+    }
+
+
+    public static void printMergeArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(" " + array[i]);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println("Массив после слияния: ");
+        printMergeArray(merge(new int[]{1, 2, 3, 4, 5, 0, 0, 0}, 5, new int[]{3, 2, 3, 0, 0}, 3));
+        System.out.println();
+        System.out.println("Массив после сортировки по возрастанию");
+        printMergeArray(sortArray((merge(new int[]{1, 2, 3, 4, 5, 0, 0, 0}, 5, new int[]{3, 2, 3, 0, 0}, 3))));
     }
 }

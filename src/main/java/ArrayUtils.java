@@ -58,4 +58,29 @@ public final class ArrayUtils {
         }
         return "[" + sb.toString().substring(1).trim() + "]";
     }
+
+
+
+
+    public static int removeDublicatesArray(int[] array){
+        if(array == null) throw new NullPointerException("Array is null");
+
+        int j = 0, i = 0;
+        while(i < array.length){
+            if(array[i] == array[j]){
+                i++;
+            }else{
+                j++;
+                array[j] = array[i];
+                i++;
+            }
+        }
+
+        return j+1;
+    }
+
+
+    public static void main(String[] args){
+        System.out.println((removeDublicatesArray(new int[]{1, 1, 2,3,4,4,5,5,6,7,7})));
+    }
 }

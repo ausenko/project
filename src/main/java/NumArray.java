@@ -1,33 +1,27 @@
 /**
  * Created by zhenya on 12.11.15.
  */
+
+
 public class NumArray {
+  int[] sum;
 
-    int[] sum;
+  public NumArray(int[] nums){
+      sum = new int[nums.length];
+      if(nums.length>0){
+          sum[0] = nums[0];
+      }
+      for(int i = 1; i<nums.length; i++){
+          sum[i] = sum[i-1]+ nums[i];
+      }
 
-    public NumArray(int[] nums) {
-        if (nums == null) {
-            sum = null;
-        } else if (nums.length == 0) {
-            sum = new int[0];
-        } else {
-            sum = new int[nums.length];
-            sum[0] = 0;
-            for (int i = 1; i < sum.length; i++) {
-                sum[i] = sum[i - 1] + nums[i];
-            }
-
-        }
-
-    }
+  }
     public int sumRange(int i, int j){
-        if(i >= sum.length || j >= sum.length || i > j){
-            return 0;
-        }else if(i == 0){
+        if(j == sum.length || j > sum.length || j < 0 || i < 0) throw new ArrayIndexOutOfBoundsException();
+        if(i == 0){
             return sum[j];
-        }else{
-            return sum[j] - sum[i-1];
         }
-    }
+        return sum[j] - sum[i-1];
 
+    }
 }

@@ -1,42 +1,23 @@
 /**
- * Created by Anton on 23.11.15.
+ *
+ * <li>https://leetcode.com/problems/missing-number/</li>
+ *
+ *
+ * Created by Anton on 26.11.15.
  */
 public class Solution {
-    private String version1;
-    private String version2;
+    public int missingNumber(int[] nums) {
+        if (nums.length == 0) return 0;
 
-
-
-    public String newVersionString(String format) {
-       if (format == null) return null;
-
-        String newversion = format.replace(".", "");
-        return newversion;
+        int sum = 0;
+        int length = nums.length;
+        for (int i = 0; i <= length; i++) {
+            sum += i;
+        }
+        for (int i : nums) {
+            sum -= i;
+        }
+        return sum;
     }
-
-
-    public double newTypeVersion(String str) {
-
-        double d = 0;
-        d = Double.parseDouble(newVersionString(str));
-        return d;
-    }
-
-
-    public static void main(String[] args) {
-
-        Solution sl = new Solution();
-        sl.version1 = "-1.0.1";
-        sl.version2 = "0.01.0.0";
-
-        System.out.println(sl.newVersionString(sl.version1));
-        System.out.println(sl.newVersionString(sl.version2));
-        System.out.println(sl.newTypeVersion(sl.version1));
-        System.out.println(sl.newTypeVersion(sl.version2));
-
-
-    }
-
-
 
 }

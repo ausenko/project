@@ -21,7 +21,7 @@ public final class ArrayUtils {
 
         final Random rand = new Random();
         final int[] array = new int[n];
-        for (int i = 0; i < array.length; i++) {git 
+        for (int i = 0; i < array.length; i++) {
             array[i] = rand.nextInt(n);
         }
         return array;

@@ -60,7 +60,7 @@ public final class ArrayUtils {
     }
 
 
-    public int[] sorted(int nums[] ){
+    public static int[] sorted(int nums[] ){
 
         int temp = 0;
 
@@ -74,6 +74,14 @@ public final class ArrayUtils {
             }
         }
         return nums;
+    }
+
+
+    public static void print(int[] array){
+        for(int i = 0; i < array.length; i++){
+            System.out.println("[" + i + "]" + " = "+array[i]);
+        }
+
     }
 
 }

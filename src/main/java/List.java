@@ -29,7 +29,7 @@ public class List<T> {
             throw new IllegalStateException("List doesn't have elements");
         }
 
-        if (head.getData() == item) {
+        if (head.getData().equals(item)) {
             head = head.getNext();
             return;
         }
@@ -50,7 +50,7 @@ public class List<T> {
     }
 
 
-    public void removeIndex(int index) {
+    public void remove(int index) {
         if (index >= size) {
             throw new IllegalArgumentException("Invalid index=" + index + ", list size=" + size);
         }

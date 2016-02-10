@@ -26,7 +26,7 @@ public class ListTest {
     }
 
 
-    @Test
+   @Test
     public void testRemove() {
         final List<Integer> list = new List<Integer>();
 
@@ -49,10 +49,10 @@ public class ListTest {
 
     }
 
-    @Test
-    public void testRemoveIndex() {
-        final List<Integer> list = new List<Integer>();
 
+    @Test
+   public void testRemove() {
+        final List<Integer> list = new List<Integer>();
         list.add(1);    //0 --> 2 -->3
         list.add(2);    //1 --> 3 -->4
         list.add(3);    //2 --> 4 -->5
@@ -60,13 +60,13 @@ public class ListTest {
         list.add(5);    //4 --> 6
         list.add(6);    //5
 
-        list.removeIndex(0);
+        list.remove(0);
         assertEquals(new Integer(2), list.get(0));
 
-        list.removeIndex(0);
+        list.remove(0);
         assertEquals(new Integer(3), list.get(0));
 
-        list.removeIndex(2);
+        list.remove(2);
         assertEquals(new Integer(6), list.get(2));
     }
 

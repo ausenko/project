@@ -63,8 +63,9 @@ public class Node<T> {
     }
 
 
-    public void setData(T data) {
+    public T setData(T data) {
         this.data = data;
+        return null;
     }
 
 

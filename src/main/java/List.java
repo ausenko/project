@@ -37,7 +37,7 @@ public class List<T> {
         Node<T> t = head;
         Node<T> findvalue = t.getNext();
         while (t.getNext() != null) {
-            if (t.getNext() == item) {
+            if (t.getNext().equals(item)) {
                 if (tail == t.getNext()) {
                     tail = t;
                 }

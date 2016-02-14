@@ -21,7 +21,7 @@ public class Stack<T> {
         T findvalue = (T) head.getNext();
         findvalue = (T) head;
         size--;
-        return (T) head;
+        return  head.getData();
     }
 
 

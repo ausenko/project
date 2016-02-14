@@ -30,19 +30,21 @@ public class StackTest {
 
     @Test
     public void testPop() {
-        stack.push(Integer.valueOf(1));
-        stack.push(Integer.valueOf(2));
-        stack.push(Integer.valueOf(3));
-        stack.push(Integer.valueOf(4));
+        stack.push(Integer.valueOf(1));     //0
+        stack.push(Integer.valueOf(2));     //1
+        stack.push(Integer.valueOf(3));     //2
+        stack.push(Integer.valueOf(4));     //3
+        stack.push(Integer.valueOf(5));     //4
+        stack.push(Integer.valueOf(6));     //5
 
         stack.pop();
-        assertEquals(new Integer(2), stack.get(0));
+        assertEquals(Integer.valueOf(2), stack.get(0));
 
         stack.pop();
-        assertEquals(new Integer(3), stack.get(0));
+        assertEquals(Integer.valueOf(3), stack.get(0));
 
         stack.pop();
-        assertEquals(new Integer(4), stack.get(0));
+        assertEquals(Integer.valueOf(4), stack.get(0));
 
     }
 

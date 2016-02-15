@@ -16,12 +16,12 @@ public class Stack<T> {
     public T pop() {
         if (head == null) {
             throw new IllegalStateException("Stack doesn't have elements");
+        } else {
+            T findvalue = head.getData();
+            head = head.getPrev();
+            --size;
+            return findvalue;
         }
-
-        T findvalue = (T) head.getNext();
-        findvalue = (T) head;
-        size--;
-        return  head.getData();
     }
 
 

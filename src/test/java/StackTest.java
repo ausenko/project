@@ -37,15 +37,11 @@ public class StackTest {
         stack.push(Integer.valueOf(5));     //4
         stack.push(Integer.valueOf(6));     //5
 
-        stack.pop();
-        assertEquals(Integer.valueOf(2), stack.get(0));
 
-        stack.pop();
-        assertEquals(Integer.valueOf(3), stack.get(0));
-
-        stack.pop();
-        assertEquals(Integer.valueOf(4), stack.get(0));
-
+        assertEquals(Integer.valueOf(6), stack.pop());
+        assertEquals(Integer.valueOf(5), stack.pop());
+        assertEquals(Integer.valueOf(4), stack.pop());
+        assertEquals(Integer.valueOf(3), stack.pop());
     }
 
 
@@ -89,6 +85,12 @@ public class StackTest {
 
         stack.push(Integer.valueOf(4));
         assertEquals(4, stack.size());
+
+        stack.pop();
+        assertEquals(3, stack.size());
+
+        stack.pop();
+        assertEquals(2, stack.size());
 
     }
 

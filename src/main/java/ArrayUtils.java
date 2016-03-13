@@ -62,7 +62,7 @@ public final class ArrayUtils {
 
     public static int[] sorted(int nums[] ){
 
-        int temp = 0;
+        int temp = 0;   
 
         for( int i = nums.length-1; i >= 0; i++ ){
             for( int j = 0; j < i; j++){
